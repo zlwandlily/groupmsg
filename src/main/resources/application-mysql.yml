@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver #jdbc驱动
+    username: root #用户名
+    password: zlw@wll1314 #用户密码
+    url: jdbc:mysql://localhost:3306/wechat_repository?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    type: com.zaxxer.hikari.HikariDataSource #默认为tomcat链接池，制定为hikari链接池
+    hikari:
+      minimum-idle: 5 #最小链接数
+      maximum-pool-size: 10 #最大连接池
+      auto-commit: true #自动提交从连接池中返回的链接
+      idle-timeout: 30000
+      pool-name: GroupMsgDataSource
+      max-lifetime: 1800000
+      connection-timeout: 30000 #链接超时时间
+      connection-test-query: select 1 from dual
+
